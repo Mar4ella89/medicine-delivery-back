@@ -1,36 +1,23 @@
-// const { Schema, model } = require("mongoose");
-// const Joi = require("joi");
+const { Schema, model } = require("mongoose");
+const Joi = require("joi");
 
-// const { hadleMongooseError } = require("../helpers");
+const { hadleMongooseError } = require("../helpers");
 
-// const contactSchema = new Schema(
-//   {
-//     name: {
-//       type: String,
-//       required: [true, "Set name for contact"],
-//     },
-//     email: {
-//       type: String,
-//       required: [true, "Set email for contact"],
-//     },
-//     phone: {
-//       type: String,
-//       required: [true, "Set phone for contact"],
-//     },
-//     favorite: {
-//       type: Boolean,
-//       default: false,
-//     },
-//     owner: {
-//       type: Schema.Types.ObjectId,
-//       ref: "user",
-//       required: true,
-//     },
-//   },
-//   { versionKey: false, timestamps: true }
-// );
+const medicinesSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Set name for medicines"],
+    },
+    // favorite: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+  },
+  { versionKey: false, timestamps: true }
+);
 
-// contactSchema.post("save", hadleMongooseError);
+medicinesSchema.post("save", hadleMongooseError);
 
 // const addSchema = Joi.object({
 //   name: Joi.string().min(3).max(30).required().messages({
@@ -60,11 +47,11 @@
 //   }),
 // });
 
-// const schemas = {
-//   addSchema,
-//   updateFavoriteSchema,
-// };
+const schemas = {
+  addSchema,
+  updateFavoriteSchema,
+};
 
-// const Contact = model("contact", contactSchema);
+const Medicines = model("medicines", medicinesSchema);
 
-// module.exports = { Contact, schemas };
+module.exports = { Medicines, schemas };

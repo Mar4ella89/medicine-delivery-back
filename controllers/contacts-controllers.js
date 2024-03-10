@@ -1,13 +1,13 @@
 const { HttpError, ctrlWrapper } = require("../helpers");
 
-const { Contact } = require("../models/contact");
+const { Medicines } = require("../models/medicines");
 
-const getAllContacts = async (req, res) => {
+const getAllMedicines = async (req, res) => {
   const { _id: owner } = req.user;
   const { page = 1, limit = 10 } = req.query;
   const { favorite = true } = req.query;
   const skip = (page - 1) * limit;
-  const result = await Contact.find(
+  const result = await Medicines.find(
     { owner, favorite },
     "-createdAt -updatedAt",
     {
@@ -20,52 +20,52 @@ const getAllContacts = async (req, res) => {
 
 const getById = async (req, res) => {
   const { id } = req.params;
-  // const result = await Contact.findOne({ _id: id });
-  const result = await Contact.findById(id);
+  // const result = await Medicines.findOne({ _id: id });
+  const result = await Medicines.findById(id);
 
   if (!result) {
-    throw HttpError(404, "Contact not found");
+    throw HttpError(404, "Medicines not found");
   }
   res.json(result);
 };
 
-const addContact = async (req, res) => {
+const addMedicines = async (req, res) => {
   const { _id: owner } = req.user;
-  const result = await Contact.create({ ...req.body, owner });
+  const result = await Medicines.create({ ...req.body, owner });
   res.status(201).json(result);
 };
 
 const updateById = async (req, res) => {
   const { id } = req.params;
-  const result = await Contact.findByIdAndUpdate(id, req.body, { new: true });
+  const result = await Medicines.findByIdAndUpdate(id, req.body, { new: true });
   if (!result) {
-    throw HttpError(404, "Contact not found");
+    throw HttpError(404, "Medicines not found");
   }
   res.json(result);
 };
 
 const updateFavoriteById = async (req, res) => {
   const { id } = req.params;
-  const result = await Contact.findByIdAndUpdate(id, req.body, { new: true });
+  const result = await Medicines.findByIdAndUpdate(id, req.body, { new: true });
   if (!result) {
-    throw HttpError(404, "Contact not found");
+    throw HttpError(404, "Medicines not found");
   }
   res.json(result);
 };
 
 const deleteById = async (req, res) => {
   const { id } = req.params;
-  const deleteContact = await Contact.findByIdAndDelete(id);
-  if (!deleteContact) {
-    throw HttpError(404, "Contact not found");
+  const deleteMedicines = await Medicines.findByIdAndDelete(id);
+  if (!deleteMedicines) {
+    throw HttpError(404, "Medicines not found");
   }
-  res.json({ message: "Contact deleted" });
+  res.json({ message: "Medicines deleted" });
 };
 
 module.exports = {
-  getAllContacts: ctrlWrapper(getAllContacts),
+  getAllMedicines: ctrlWrapper(getAllMedicines),
   getById: ctrlWrapper(getById),
-  addContact: ctrlWrapper(addContact),
+  addMedicines: ctrlWrapper(addMedicines),
   updateById: ctrlWrapper(updateById),
   updateFavoriteById: ctrlWrapper(updateFavoriteById),
   deleteById: ctrlWrapper(deleteById),
