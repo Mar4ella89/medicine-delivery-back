@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Apteka911",
+    "latitude": 50.52204762921902,
+    "longitude": 30.450008801888966
+  },
+  {
+    "name": "AptekaBam",
+    "latitude": 50.512755463328666,
+    "longitude": 30.45377182743475
+  },
+  {
+    "name": "HealthWorld",
+    "latitude": 50.47514648118427,
+    "longitude": 30.365683930821213
+  },
+  {
+    "name": "GoodDay",
+    "latitude": 50.46504663400121, 
+    "longitude": 30.6108612211814
+  },
+  {
+    "name": "ANC",
+    "latitude": 50.5336189448562, 
+    "longitude": 30.61223451221248
+  }
+]

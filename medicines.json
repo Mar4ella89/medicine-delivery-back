@@ -1,0 +1,72 @@
+[
+    {
+      "name": "Acetaminophen",
+      "price": 3.49,
+      "img-url": "https://cdn.britannica.com/23/130223-050-99065995/acetaminophen-suppositories.jpg"
+    },
+    {
+      "name": "Amlodipine",
+      "price": 8.49,
+      "img-url": "https://5.imimg.com/data5/SELLER/Default/2023/7/326770036/BL/UA/BR/135658020/amlodipine-tablets-ip-5-mg.jpg"
+    },
+    {
+      "name": "Atorvastatin",
+      "price": 18.99,
+      "img-url": "https://5.imimg.com/data5/SELLER/Default/2023/7/325710235/RG/XA/JU/74349057/atorvastatin-10-mg.jpg"
+    },
+    {
+      "name": "Valsartan",
+      "price": 15.99,
+      "img-url": "https://lekpharm.by/uploads/catalog/valsartan-plus/valsartan80-12.530.jpg"
+    },
+    {
+      "name": "Warfarin",
+      "price": 9.99,
+      "img-url": "https://miro.medium.com/v2/resize:fit:463/1*AQT02HC_kGcxhe_LQCyLug.png"
+    },
+    {
+      "name": "Glibenclamide",
+      "price": 6.99,
+      "img-url": "https://aavelonepharma.com/wp-content/uploads/glibenclamide.png"
+    },
+    {
+      "name": "Digoxin",
+      "price": 5.99,
+      "img-url": "https://www.careformulationlabs.com/uploaded_files/digoxin-025.jpg"
+    },
+    {
+      "name": "Ibuprofen",
+      "price": 5.99,
+      "img-url": "https://root.tblcdn.com/img/goods/47fc1317-6887-4c54-9ac2-172704f52061/1/img_0.jpg?v=AAAAAAoI9Pg"
+    },
+    {
+      "name": "Ketoprofen",
+      "price": 7.99,
+      "img-url": "https://root.tblcdn.com/img/goods/721dc347-3611-4b35-bb9e-862327c6500c/1/img_0.jpg?v=AAAAAAoOUzk"
+    },
+    {
+      "name": "Levothyroxine",
+      "price": 4.99,
+      "img-url": "https://www.cloudpharmacy.co.uk/uploads/images/products/large/cloud-pharmacy-levothyroxine-levothyroxine-1576076489Levothryoxine.jpg"
+    },
+    {
+      "name": "Losartan",
+      "price": 14.99,
+      "img-url": "https://globelapharma.com/wp-content/uploads/2023/01/LOSARTAN.png"
+    },
+    {
+      "name": "Metformin",
+      "price": 16.99,
+      "img-url": "https://root.tblcdn.com/img/goods/8af559c0-c0c1-11ec-bacf-0050569aacb6/1/img_0.jpg?v=AAAAAApq6FI"
+    },
+    {
+      "name": "Omeprazole",
+      "price": 12.99,
+      "img-url": "https://root.tblcdn.com/img/goods/7acf3c75-3378-4848-851d-f059067dbc72/1/img_0.jpg?v=AAAAAAn43cQ"
+    },
+    {
+        "name": "Aspirin",
+        "price": 3.99,
+        "img-url": "https://mmz1.net/image/cache/catalog/products/herz-kreislauf-gefaesse/blutverduennung/06706155_AspirinProtect100mg-800x800.webp"
+      }
+]
