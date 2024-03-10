@@ -3,7 +3,7 @@ const { HttpError, ctrlWrapper } = require("../helpers");
 const { Drugs } = require("../models/drugs");
 
 const getAllDrugs = async (req, res) => {
-  const { _id: owner } = req.user;
+  const { _id } = req.drugs;
   const { page = 1, limit = 10 } = req.query;
   const { favorite = true } = req.query;
   const skip = (page - 1) * limit;
