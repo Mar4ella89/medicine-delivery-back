@@ -7,7 +7,7 @@ const { schemas } = require("../../models/medicines");
 
 const router = express.Router();
 
-router.get("/", ctrl.getAllmedicines);
+router.get("/", ctrl.getAllMedicines);
 
 router.get("/:id", isValidId, ctrl.getById);
 
