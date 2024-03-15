@@ -8,13 +8,12 @@ const getAllDrugs = async (req, res) => {
   const { favorite = true } = req.query;
   const skip = (page - 1) * limit;
   const result = await Drugs.find(
-    { owner, favorite },
     "-createdAt -updatedAt",
     {
       skip,
       limit,
     }
-  ).populate("owner", "name email");
+  );
   res.json(result);
 };
 
