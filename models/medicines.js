@@ -3,19 +3,11 @@ const Joi = require("joi");
 
 const { hadleMongooseError } = require("../helpers");
 
-const medicinesSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: [true, "Set name for medicines"],
-    },
-    favorite: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  { versionKey: false, timestamps: true }
-);
+const medicinesSchema = new Schema({
+  name: String,
+  price: Number,
+  imageUrl: String,
+});
 
 medicinesSchema.post("save", hadleMongooseError);
 

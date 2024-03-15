@@ -3,32 +3,13 @@ const Joi = require("joi");
 
 const { hadleMongooseError } = require("../helpers");
 
-const drugsSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: [true, "Set name for contact"],
-    },
-    // email: {
-    //   type: String,
-    //   required: [true, "Set email for contact"],
-    // },
-    // phone: {
-    //   type: String,
-    //   required: [true, "Set phone for contact"],
-    // },
-    // favorite: {
-    //   type: Boolean,
-    //   default: false,
-    // },
-    // owner: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: "user",
-    //   required: true,
-    // },
+const drugsSchema = new Schema({
+  name: String,
+  coordinates: {
+    latitude: Number,
+    longitude: Number,
   },
-  { versionKey: false, timestamps: true }
-);
+});
 
 drugsSchema.post("save", hadleMongooseError);
 
