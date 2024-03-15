@@ -7,10 +7,10 @@ const getAllMedicines = async (req, res) => {
   const skip = (page - 1) * limit;
   const result = await Medicines.find(
     
-    {
-      skip,
-      limit,
-    }
+    // {
+    //   skip,
+    //   limit,
+    // }
   );
   res.json(result);
 };
