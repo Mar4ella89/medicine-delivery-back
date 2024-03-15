@@ -5,10 +5,8 @@ const { hadleMongooseError } = require("../helpers");
 
 const drugsSchema = new Schema({
   name: String,
-  coordinates: {
-    latitude: Number,
-    longitude: Number,
-  },
+  latitude: Number,
+  longitude: Number,
 });
 
 drugsSchema.post("save", hadleMongooseError);
@@ -32,14 +30,14 @@ const addSchema = Joi.object({
   //   "any.required": `"phone" is required`,
   //   "string.empty": `"phone" cannot be empty`,
   // }),
-  favorite: Joi.boolean(),
+  // favorite: Joi.boolean(),
 });
 
-const updateFavoriteSchema = Joi.object({
-  favorite: Joi.boolean().required().messages({
-    "any.required": `"favorite status" is required`,
-  }),
-});
+// const updateFavoriteSchema = Joi.object({
+//   favorite: Joi.boolean().required().messages({
+//     "any.required": `"favorite status" is required`,
+//   }),
+// });
 
 const schemas = {
   addSchema,
