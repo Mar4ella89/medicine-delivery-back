@@ -41,7 +41,6 @@ const addSchema = Joi.object({
 
 const schemas = {
   addSchema,
-  updateFavoriteSchema,
 };
 
 const Drugs = model("drugs", drugsSchema);
