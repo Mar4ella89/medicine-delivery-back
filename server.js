@@ -7,7 +7,7 @@ mongoose
   // .connect(
   //   "mongodb+srv://Mar4ella:ktybyuhflcrfz40@cluster0.g1mqafu.mongodb.net/db-drugs?retryWrites=true&w=majority&appName=Cluster0"
   // )
-  .connect(DB_HOST)
+  .connect(DB_HOST.toString())
   .then(() =>
     app.listen(PORT, () => {
       console.log("Database connection successful");
