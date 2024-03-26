@@ -3,17 +3,17 @@ const { HttpError, ctrlWrapper } = require("../helpers");
 const { Drugs } = require("../models/drugs");
 
 const getAllDrugs = async (req, res) => {
-  const { _id } = req.drugs;
+  // const { _id } = req.drugs;
   const { page = 1, limit = 10 } = req.query;
-  const { favorite = true } = req.query;
+  // const { favorite = true } = req.query;
   const skip = (page - 1) * limit;
-  const result = await Drugs.find(
-    "-createdAt -updatedAt",
-    {
-      skip,
-      limit,
-    }
-  );
+  const result = await Drugs.find();
+  // "-createdAt -updatedAt"
+  // {
+  //   skip,
+  //   limit,
+  // }
+
   res.json(result);
 };
 
