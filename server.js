@@ -3,7 +3,8 @@ const app = require("./app");
 
 // require("dotenv").config();
 
-const { DB_HOST, PORT = 3000 } = process.env;
+const DB_HOST = process.env.DB_HOST;
+const PORT = process.env.PORT || 3000;
 
 mongoose
   .connect(DB_HOST)
