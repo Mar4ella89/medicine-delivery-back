@@ -17,19 +17,7 @@ const addSchema = Joi.object({
     "string.empty": `"name" cannot be empty`,
     "string.base": `"name" must be string`,
   }),
-  // email: Joi.string()
-  //   .email({
-  //     minDomainSegments: 2,
-  //   })
-  //   .required()
-  //   .messages({
-  //     "any.required": `"email" is required`,
-  //     "string.empty": `"email" cannot be empty`,
-  //   }),
-  // phone: Joi.string().required().messages({
-  //   "any.required": `"phone" is required`,
-  //   "string.empty": `"phone" cannot be empty`,
-  // }),
+
   // favorite: Joi.boolean(),
 });
 
