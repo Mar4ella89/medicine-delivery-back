@@ -3,7 +3,7 @@ const express = require("express");
 const ctrl = require("../../controllers/medicines-controllers");
 
 const { isValidId } = require("../../middlewares");
-const { schemas } = require("../../models/medicines");
+// const { schemas } = require("../../models/medicines");
 
 const router = express.Router();
 
