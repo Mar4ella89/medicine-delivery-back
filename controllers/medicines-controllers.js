@@ -5,13 +5,10 @@ const { Medicines } = require("../models/medicines");
 const getAllMedicines = async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
   const skip = (page - 1) * limit;
-  const result = await Medicines.find(
-    
-    // {
-    //   skip,
-    //   limit,
-    // }
-  );
+  const result = await Medicines.find({
+    skip,
+    limit,
+  });
   res.json(result);
 };
 
