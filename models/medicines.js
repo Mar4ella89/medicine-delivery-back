@@ -7,6 +7,7 @@ const medicinesSchema = new Schema({
   name: String,
   price: Number,
   imageUrl: String,
+  availablePharmacies: [mongoose.Schema.Types.ObjectId],
 });
 
 medicinesSchema.post("save", hadleMongooseError);
