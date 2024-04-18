@@ -15,7 +15,9 @@ const getAllMedicines = async (req, res) => {
 const getById = async (req, res) => {
   const { id } = req.params;
   // const result = await Medicines.findOne({ _id: id });
-  const result = await Medicines.findById(id);
+  const result = await Medicines.findById(id).populate("availablePharmacies");
+
+  // const result = await Medicines.findById(id);
 
   if (!result) {
     throw HttpError(404, "Medicines not found");
