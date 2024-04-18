@@ -5,8 +5,10 @@ const { hadleMongooseError } = require("../helpers");
 
 const drugsSchema = new Schema({
   name: String,
-  latitude: Number,
-  longitude: Number,
+  coordinates: {
+    latitude: Number,
+    longitude: Number,
+  },
 });
 
 drugsSchema.post("save", hadleMongooseError);
