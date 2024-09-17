@@ -19,15 +19,7 @@ const addSchema = Joi.object({
     "string.empty": `"name" cannot be empty`,
     "string.base": `"name" must be string`,
   }),
-
-  // favorite: Joi.boolean(),
 });
-
-// const updateFavoriteSchema = Joi.object({
-//   favorite: Joi.boolean().required().messages({
-//     "any.required": `"favorite status" is required`,
-//   }),
-// });
 
 const schemas = {
   addSchema,
