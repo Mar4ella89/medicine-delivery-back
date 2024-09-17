@@ -3,9 +3,7 @@ const { HttpError, ctrlWrapper } = require("../helpers");
 const { Drugs } = require("../models/drugs");
 
 const getAllDrugs = async (req, res) => {
-  // const { _id } = req.drugs;
   const { page = 1, limit = 10 } = req.query;
-  // const { favorite = true } = req.query;
   const skip = (page - 1) * limit;
   const result = await Drugs.find({}, "", {
     skip,
@@ -16,7 +14,6 @@ const getAllDrugs = async (req, res) => {
 
 const getById = async (req, res) => {
   const { id } = req.params;
-  // const result = await Drugs.findOne({ _id: id });
   const result = await Drugs.findById(id);
 
   if (!result) {
