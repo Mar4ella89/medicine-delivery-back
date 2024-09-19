@@ -15,7 +15,7 @@ router.get("/:id", isValidId, ctrl.getById);
 //   "/",
 //   authenticate,
 //   validateBody(schemas.addSchema),
-//   ctrl.addContact
+//   ctrl.addMedicines
 // );
 
 // router.put(
