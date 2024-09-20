@@ -95,14 +95,10 @@ const addSchema = Joi.object({
             "number.base": `"totalPrice" must be a number`,
             "number.min": `"totalPrice" must be at least 0`,
           }),
-          medicineId: Joi.string()
-            .guid({ version: ["uuidv4"] })
-            .required()
-            .messages({
-              "any.required": `"medicineId" is required`,
-              "string.empty": `"medicineId" cannot be empty`,
-              "string.guid": `"medicineId" must be a valid UUID`,
-            }),
+          medicineId: Joi.string().required().messages({
+            "any.required": `"medicineId" is required`,
+            "string.empty": `"medicineId" cannot be empty`,
+          }),
         })
       )
       .required(),
