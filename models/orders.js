@@ -67,7 +67,7 @@ const addSchema = Joi.object({
         "string.pattern.base": `"phone" must be a valid phone number`,
       }),
     deliveryMethod: Joi.string()
-      .valid("standard", "express")
+      .valid("Pick up from store", "Delivery to address", "New Post")
       .required()
       .messages({
         "any.required": `"deliveryMethod" is required`,
