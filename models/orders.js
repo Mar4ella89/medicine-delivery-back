@@ -85,6 +85,6 @@ const schemas = {
   addSchema,
 };
 
-const orders = model("orders", ordersSchema);
+const Order = model("order", ordersSchema);
 
-module.exports = { orders, schemas };
+module.exports = { Order, schemas };
