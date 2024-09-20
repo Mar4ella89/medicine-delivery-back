@@ -14,13 +14,18 @@ const ordersSchema = new Schema({
     address: { type: String, required: true },
   },
   order: {
-    quantity: { type: Number, required: true },
-    totalPrice: { type: Number, required: true },
-    medicineId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Medicine",
-      required: true,
-    },
+    items: [
+      {
+        quantity: { type: Number, required: true },
+        totalPrice: { type: Number, required: true },
+        medicineId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Medicine",
+          required: true,
+        },
+      },
+    ],
+    totalOrderPrice: { type: Number, required: true },
   },
 });
 
@@ -76,25 +81,32 @@ const addSchema = Joi.object({
     }),
   }).required(),
   order: Joi.object({
-    quantity: Joi.number().integer().min(1).required().messages({
-      "any.required": `"quantity" is required`,
-      "number.base": `"quantity" must be a number`,
-      "number.integer": `"quantity" must be an integer`,
-      "number.min": `"quantity" must be at least 1`,
-    }),
-    totalPrice: Joi.number().min(0).required().messages({
-      "any.required": `"totalPrice" is required`,
-      "number.base": `"totalPrice" must be a number`,
-      "number.min": `"totalPrice" must be at least 0`,
-    }),
-    medicineId: Joi.string()
-      .guid({ version: ["uuidv4"] })
-      .required()
-      .messages({
-        "any.required": `"medicineId" is required`,
-        "string.empty": `"medicineId" cannot be empty`,
-        "string.guid": `"medicineId" must be a valid UUID`,
-      }),
+    items: Joi.array()
+      .items(
+        Joi.object({
+          quantity: Joi.number().integer().min(1).required().messages({
+            "any.required": `"quantity" is required`,
+            "number.base": `"quantity" must be a number`,
+            "number.integer": `"quantity" must be an integer`,
+            "number.min": `"quantity" must be at least 1`,
+          }),
+          totalPrice: Joi.number().min(0).required().messages({
+            "any.required": `"totalPrice" is required`,
+            "number.base": `"totalPrice" must be a number`,
+            "number.min": `"totalPrice" must be at least 0`,
+          }),
+          medicineId: Joi.string()
+            .guid({ version: ["uuidv4"] })
+            .required()
+            .messages({
+              "any.required": `"medicineId" is required`,
+              "string.empty": `"medicineId" cannot be empty`,
+              "string.guid": `"medicineId" must be a valid UUID`,
+            }),
+        })
+      )
+      .required(),
+    totalOrderPrice: Joi.number().min(0).required(),
   }).required(),
 });
 
