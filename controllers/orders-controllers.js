@@ -5,7 +5,7 @@ const { Order } = require("../models/orders");
 const getAllOrders = async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
   const skip = (page - 1) * limit;
-  const result = await orders.find({}, "", {
+  const result = await Order.find({}, "", {
     skip,
     limit,
   });
@@ -14,17 +14,16 @@ const getAllOrders = async (req, res) => {
 
 const getById = async (req, res) => {
   const { id } = req.params;
-  const order = await Contact.findById(id);
+  const order = await Order.findById(id);
   if (!order) {
-    throw HttpError(404, "Contact not found");
+    throw HttpError(404, "Order not found");
   }
   res.json(order);
 };
 
 const addOrder = async (req, res) => {
-  const { _id: owner } = req.user;
-  const result = await Order.create({ ...req.body, owner });
-  res.status(201).json(result);
+  const newOrder = await Order.create(req.body);
+  res.status(201).json(newOrder);
 };
 
 const updateById = async (req, res) => {
